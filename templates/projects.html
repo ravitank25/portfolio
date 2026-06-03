@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %}Projects{% endblock %} {% block content %}
+
+<div class="container py-5" style="margin-top: 3rem; margin-bottom: 3rem;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 3rem;">My Projects</h1>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card shadow" style="border-radius: 15px; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #00d4ff, #00a8cc); height: 200px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 4rem;">🌦️</span>
+        </div>
+
+        <div class="card-body">
+          <h5 style="color: #00d4ff; font-weight: 700;">Weather App</h5>
+
+          <p style="color: #b0b8c1; font-size: 0.95rem;">Flask-based weather application with real-time API integration and beautiful UI.</p>
+
+          <a href="#" class="btn btn-primary btn-sm"> View Project → </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card shadow" style="border-radius: 15px; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #ff6b9d, #ff4081); height: 200px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 4rem;">🎵</span>
+        </div>
+
+        <div class="card-body">
+          <h5 style="color: #ff6b9d; font-weight: 700;">Spotify Clone</h5>
+
+          <p style="color: #b0b8c1; font-size: 0.95rem;">Django-powered music streaming application integrated with Spotify API for playlists and recommendations.</p>
+
+          <a href="#" class="btn btn-primary btn-sm"> View Project → </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card shadow" style="border-radius: 15px; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #00ff88, #00cc6a); height: 200px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 4rem;">🏢</span>
+        </div>
+
+        <div class="card-body">
+          <h5 style="color: #00ff88; font-weight: 700;">Apartment Management</h5>
+
+          <p style="color: #b0b8c1; font-size: 0.95rem;">Complete property management system with tenant tracking, maintenance requests, and billing features.</p>
+
+          <a href="#" class="btn btn-primary btn-sm"> View Project → </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="/contact" class="btn btn-primary btn-lg">Get More Details</a>
+  </div>
+</div>
+
+{% endblock %}
