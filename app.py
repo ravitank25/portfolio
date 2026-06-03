@@ -1,11 +1,12 @@
-from flask import Flask, render_template
-from flask import request, redirect
+from flask import Flask, render_template, request, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
-from flask import send_file
 from models import *
 
 app = Flask(__name__)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///portfolio.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 db = SQLAlchemy(app)
 
 
@@ -31,14 +32,12 @@ def projects():
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-
     if request.method == "POST":
-
         contact = Contact(
-            name=request.form["name"],
-            email=request.form["email"],
-            subject=request.form["subject"],
-            message=request.form["message"],
+            name=request.form.get("name"),
+            email=request.form.get("email"),
+            subject=request.form.get("subject"),
+            message=request.form.get("message")
         )
 
         db.session.add(contact)
@@ -56,18 +55,22 @@ def thankyou():
 
 @app.route("/resume")
 def resume():
-    return send_file("static/resume/resume.pdf", as_attachment=True)
+    return send_file(
+        "static/resume/resume.pdf",
+        as_attachment=True
+    )
 
 
 @app.route("/admin")
 def admin():
-
     contacts = Contact.query.all()
-
     return render_template("admin.html", contacts=contacts)
 
 
+# Create database tables
+with app.app_context():
+    db.create_all()
+
+
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
