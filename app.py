@@ -61,10 +61,10 @@ def resume():
     )
 
 
-@app.route("/admin")
-def admin():
-    contacts = Contact.query.all()
-    return render_template("admin.html", contacts=contacts)
+# @app.route("/admin")
+# def admin():
+#     contacts = Contact.query.all()
+#     return render_template("admin.html", contacts=contacts)
 
 
 # Create database tables
