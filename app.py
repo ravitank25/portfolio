@@ -68,7 +68,8 @@ def resume():
 
 
 # Create database tables
-with app.app_context():
+@app.before_request
+def create_tables():
     db.create_all()
 
 
