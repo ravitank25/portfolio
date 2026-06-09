@@ -16,6 +16,63 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.project-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-img {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: white;
+}
+
+.weather-bg {
+  background: linear-gradient(135deg, #00d4ff, #007cf0);
+}
+
+.spotify-bg {
+  background: linear-gradient(135deg, #ff4d6d, #ff006e);
+}
+
+.apartment-bg {
+  background: linear-gradient(135deg, #00c853, #009688);
+}
+
+.car-bg {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+}
+
+.learning-bg {
+  background: linear-gradient(135deg, #3f51b5, #2196f3);
+}
+
+.ecommerce-bg {
+  background: linear-gradient(135deg, #673ab7, #9c27b0);
+}
+
+.project-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.project-text {
+  color: #6c757d;
+  min-height: 100px;
+}
+
+.project-card .btn {
+  border-radius: 30px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: var(--dark-bg);
